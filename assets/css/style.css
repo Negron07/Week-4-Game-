@@ -1,0 +1,60 @@
+h1{
+	border: 1px solid silver;
+	background: blue;
+	font-size: 100px;
+	color: silver;
+	text-align: center;
+	
+}
+.boxtop{
+	border: 1px solid silver;
+	background: white;
+	color: red;
+	font-size: 20px;
+	width: 50%;
+	margin-left: 25%;
+	text-align: center;
+	margin-top: 10px;
+
+}
+.boxright{
+	float: right;
+	border: 1px solid green;
+	background: green;
+	height: 150px;
+	width: 150px;
+	font-size: 35px;
+	text-align: left;
+	margin-top: 10px;
+}
+.boxleft{
+	float: left;
+	border: 1px solid green;
+	background: yellow;
+	height: 150px;
+	width: 150px;
+	margin-top: 10px;
+}
+.images{
+	margin-left: 50px;
+	text-align: center;
+}
+
+.boxunder{
+	text-align: center;
+	margin-top: 15px;
+	border: 1px solid red;
+	padding: 20px;
+	background: white;
+
+}
+.boxlower{
+	border: 1px solid blue;
+	background: silver;
+	height: 150px;
+	width: 150px;
+	margin-top: 10px;
+	margin-left: 43%;
+}
+
+
