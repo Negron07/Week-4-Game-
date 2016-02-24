@@ -1,61 +1,46 @@
 // Score needed
  
-var yourGoal = 0
+var yourGoal = 0;
 
 // what will have intergers attached to
-var wins = 0
-var losses = 0
-var yourScore = 0
-var blueCrystal
-var yellowCrystal
-var redCrystal
-var greenCrystal 
+var wins = 0;
+var losses = 0;
+var yourScore = 0;
+var blueCrystal = [];
+var yellowCrystal = [];
+var redCrystal = [];
+var greenCrystal = [];
 
 // giving the crystals clickability and a numerical value
 $(document).ready(function(){
 
+// Set initial values of crystals
+// Click the crystal
+// Get a value and add it to your initial score
+var yourGoal = Math.floor(Math.random() * 11)
+var blueCrystal = Math.floor(Math.random() * 11)
+var yellowCrystal = Math.floor(Math.random() * 11)
+var redCrystal =  Math.floor(Math.random() * 11)
+var greenCrystal = Math.floor(Math.random() * 11)
 
-	$("#blue").on('click', function(){
-		if (blueCrystal){
-			yourScore = yourScore + blueCrystal
-			document.getElementById("yourScore").innerHTML = yourScore;
-			number()
-		}
-		else {
-			blueCrystal = Math.floor((Math.random() * 11) + 1);
-		}
+	$("#blue").on('click', function() {
+		yourScore = yourScore + blueCrystal;
+		document.getElementById("yourscore").innerHTML = yourScore;
 	});
-	$("#yellow").on('click', function(){
-		if (yellowCrystal){
-			yourScore = yourScore + yellowCrystal
-			document.getElementById("yourScore").innerHTML = yourScore;
-			number()
-		}
-		else {
-			yellowCrystal = Math.floor((Math.random() * 11) + 1);
-		}
+	$("#yellow").on('click', function() {
+		yourScore = yourScore + yellowCrystal;
+		document.getElementById("yourscore").innerHTML = yourScore;
+	});
+	$("#red").on('click', function() {
+		yourScore = yourScore + redCrystal;
+		document.getElementById("yourscore").innerHTML = yourScore;
 	});
 
-	$("#red").on('click', function(){
-		if (redCrystal){
-			yourScore = yourScore + redCrystal
-			document.getElementById("yourScore").innerHTML = yourScore;
-			number()
-		}
-		else {
-			greenCrystal = Math.floor((Math.random() * 11) + 1);
-		}
+	$("#green").on('click', function() {
+		yourScore = yourScore + greenCrystal;
+		document.getElementById("yourscore").innerHTML = yourScore;
 	});
-$("#green").on('click', function(){
-		if (greenCrystal){
-			yourScore = yourScore + greenCrystal
-			document.getElementById("yourScore").innerHTML = yourScore;
-			number()
-		}
-		else {
-			greenCrystal = Math.floor((Math.random() * 11) + 1);
-		}
-	});
+
 	function reset(){
 		yourGoal = 0
 		yourScore = 0
@@ -70,21 +55,26 @@ $("#green").on('click', function(){
 }
 
 	function number(){
-		if(yourScore > yourGoal){
+		if(yourScore > gameOver){
 			losses++
-			$('#losses').html('Losses:' + losses);
+			$('#losses').html('losses:' + losses);
+			alert("You Win =)")
 			reset();
 		}
-		if(yourScore == yourGoal){
+			else if (yourScore == gameOver){
 			wins++
-			$('#wins').html('Wins:' + wins);
+			$('#wins').html('wins:' + wins);
+			alert("You lost =(")
+		}
+		number();
 		};
-	}
+	
 })
 	//what the goal points is
 
 	function gameOver(){
-		yourGoal = Math.floor((Math.random() * 101) + 19);
+		yourGoal = Math.floor((Math.random() * 101) + 99);
 		document.getElementById("goal").innerHTML = yourGoal;
 			alert(yourGoal);
 	}
+	gameOver();

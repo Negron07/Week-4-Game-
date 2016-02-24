@@ -1,4 +1,4 @@
-h1{
+  h1{
 	border: 1px solid silver;
 	background: blue;
 	font-size: 100px;
@@ -47,14 +47,6 @@ h1{
 	padding: 20px;
 	background: white;
 
-}
-.boxlower{
-	border: 1px solid blue;
-	background: silver;
-	height: 150px;
-	width: 150px;
-	margin-top: 10px;
-	margin-left: 43%;
 }
 
 
